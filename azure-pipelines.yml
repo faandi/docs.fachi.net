@@ -28,6 +28,8 @@ steps:
     echo "BUILD_REPOSITORY_LOCALPATH:$BUILD_REPOSITORY_LOCALPATH"
     echo "BUILD_REPOSITORY_LOCALPATH:$(Build.Repository.LocalPath)"
   displayName: 'setup git'
+  env:
+    GIT_USERNAME: $(GIT_USERNAME)
 
 # - script: |
 #     ./publish.sh
