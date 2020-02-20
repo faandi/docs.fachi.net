@@ -17,8 +17,9 @@ steps:
   displayName: 'Install Node.js'
 
 - script: |
-    git config --global user.email "you@example.com"
-    git config --global user.name "Azure Pipelines"
+    git config user.email "AzurePipelines@fachi.net"
+    git config user.name "Azure Pipelines"
+    git config credential.helper "$BUILD_REPOSITORY_LOCALPATH/azure-pipelines-git-credential-helper.sh"
   displayName: 'setup git'
 
 - script: |
