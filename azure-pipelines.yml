@@ -24,10 +24,10 @@ steps:
     git config --global user.name "Azure Pipelines"
     git config --global credential.helper "$BUILD_REPOSITORY_LOCALPATH/azure-pipelines-git-credential-helper.sh"
   displayName: 'setup git'
-  env:
-    GIT_USERNAME: $(GIT_USERNAME)
-    GIT_PASSWORD: $(GIT_PASSWORD)
 
 - script: |
     ./publish.sh
   displayName: 'build and publish'
+  env:
+    GIT_USERNAME: $(GIT_USERNAME)
+    GIT_PASSWORD: $(GIT_PASSWORD)
