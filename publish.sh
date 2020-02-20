@@ -14,6 +14,9 @@ npm run build || exit 1
 cd $PUBLIC_DIR || exit 1
 git add * || exit 1
 git commit -a -m "Release $BUILD_NUMBER" || exit 1
+
+echo "Using USER $GIT_USERNAME"
+
 git push || exit 1
 
 echo "published release named \"$BUILD_NUMBER\""
