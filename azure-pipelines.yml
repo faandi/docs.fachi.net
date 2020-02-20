@@ -9,6 +9,9 @@ trigger:
 pool:
   vmImage: 'ubuntu-latest'
 
+variables:
+- group: github-credentials
+
 steps:
 - task: NodeTool@0
   inputs:
@@ -16,5 +19,14 @@ steps:
   displayName: 'Install Node.js'
 
 - script: |
+    git config --global user.email "AzurePipelines@fachi.net"
+    git config --global user.name "Azure Pipelines"
+    git config --global credential.helper "$BUILD_REPOSITORY_LOCALPATH/azure-pipelines-git-credential-helper.sh"
+  displayName: 'setup git'
+
+- script: |
     ./publish.sh
-  displayName: 'publish'
+  displayName: 'build and publish'
+  env:
+    GIT_USERNAME: $(GIT_USERNAME)
+    GIT_PASSWORD: $(GIT_PASSWORD)
