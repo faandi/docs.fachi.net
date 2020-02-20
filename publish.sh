@@ -9,8 +9,8 @@ echo "building to $PUBLIC_DIR"
 rm $PUBLIC_DIR -Rf || exit 1
 rm $CACHE_DIR -Rf || exit 1
 git clone -b gh-pages `git remote get-url origin` $PUBLIC_DIR || exit 1
-npm install || exit 1
-npm run build || exit 1
+# npm install || exit 1
+# npm run build || exit 1
 cd $PUBLIC_DIR || exit 1
 git add * || exit 1
 git commit -a -m "Release $BUILD_NUMBER" || exit 1
