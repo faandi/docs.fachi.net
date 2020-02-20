@@ -12,6 +12,7 @@ git clone -b gh-pages `git remote get-url origin` $PUBLIC_DIR || exit 1
 # npm install || exit 1
 # npm run build || exit 1
 cd $PUBLIC_DIR || exit 1
+touch new-file.txt
 git add * || exit 1
 git commit -a -m "Release $BUILD_NUMBER" || exit 1
 
