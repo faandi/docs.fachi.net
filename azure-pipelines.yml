@@ -24,6 +24,9 @@ steps:
     git config --global user.name "Azure Pipelines"
     git config --global credential.helper "$BUILD_REPOSITORY_LOCALPATH/azure-pipelines-git-credential-helper.sh"
     echo "USER:$GIT_USERNAME"
+    echo "USER:$(GIT_USERNAME)"
+    echo "BUILD_REPOSITORY_LOCALPATH:$BUILD_REPOSITORY_LOCALPATH"
+    echo "BUILD_REPOSITORY_LOCALPATH:$(Build.Repository.LocalPath)"
   displayName: 'setup git'
 
 # - script: |
